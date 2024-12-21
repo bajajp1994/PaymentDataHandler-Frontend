@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { PaymentDetailsDialogComponent } from './payment-details-dialog/payment-details-dialog.component';
 import { PaymentService } from '../services/payment.service';
+import {AddPaymentComponent} from '../add-payment/add-payment.component';
 
 export interface FilterFields {
   payee_first_name: string;
@@ -193,6 +194,18 @@ export class MainScreenComponent implements OnInit {
     }
   }
 
+
+  openAddPaymentDialog(): void {
+    const dialogRef = this.dialog.open(AddPaymentComponent, {
+      width: '60%',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchPayments();
+      }
+    });
+  }
 
 
   openPaymentDetails(payment: any): void {

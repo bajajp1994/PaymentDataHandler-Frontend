@@ -1,0 +1,30 @@
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px; /* Adds spacing between fields */
+}
+
+mat-form-field.mat-form-field-appearance-outline {
+  border-radius: 4px; /* Rounded corners for borders */
+}
+
+mat-form-field mat-label {
+  font-size: 14px;
+}
+
+input, mat-select {
+  padding: 8px;
+}
+
+mat-error {
+  font-size: 12px;
+  color: red;
+}
+
+.form-group {
+  display: grid;
+  gap: 20px; /* Adds spacing between form groups */
+}
+
+.full-width {
+  width: 100%;
+}
