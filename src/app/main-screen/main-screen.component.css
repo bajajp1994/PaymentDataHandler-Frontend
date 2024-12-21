@@ -1,0 +1,63 @@
+.container {
+  max-width: 1200px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-header-row, .mat-row {
+  font-size: 14px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+/* Add borders to the input field */
+.border-input {
+  border: 2px solid #ccc; /* You can change the color as needed */
+  border-radius: 4px; /* Optional: to make the corners rounded */
+}
+
+/* Add borders to the table */
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #ddd;
+}
+
+.btn-info {
+  border: 1px solid #007bff;
+}
+
+.btn-primary {
+  border: 1px solid #0056b3;
+}
+
+.form-column .form-group {
+  margin-bottom: 10px;
+  padding-right: 50px;
+  display: inline-block;
+}
+
+.form-column-full {
+  border: 3px solid black;
+}
+
+button {
+  font-size: 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.form-column .form-group label{
+  display: inline-block;
+}
+

@@ -1,0 +1,102 @@
+<h4 mat-dialog-title>Payment Details</h4>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+</div>
+
+<div mat-dialog-content>
+  <div class="row">
+    <!-- First two fields parallel -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="paymentId">Payment ID</label>
+        <input type="text" id="paymentId" class="form-control" [value]="data.payment._id" disabled>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="payeeName">Payee Name</label>
+        <input type="text" id="payeeName" class="form-control" [value]="data.payment.payee_first_name + ' ' + data.payment.payee_last_name" disabled>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Next two fields parallel -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="payeeEmail">Payee Email</label>
+        <input type="text" id="payeeEmail" class="form-control" [value]="data.payment.payee_email" disabled>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="payeePhone">Payee Phone</label>
+        <input type="text" id="payeePhone" class="form-control" [value]="data.payment.payee_phone_number" disabled>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Next two fields parallel -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="payeeAddress">Payee Address</label>
+        <input type="text" id="payeeAddress" class="form-control" [value]="data.payment.payee_address_line_1 + ', ' + data.payment.payee_address_line_2 + ', ' + data.payment.payee_city + ', ' + data.payment.payee_province_or_state + ', ' + data.payment.payee_postal_code" disabled>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <input type="text" id="currency" class="form-control" [value]="data.payment.currency" disabled>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Next two fields parallel -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="discountPercent">Discount Percentage</label>
+        <input type="text" id="discountPercent" class="form-control" [value]="data.payment.discount_percent" disabled>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="taxPercent">Tax Percentage</label>
+        <input type="text" id="taxPercent" class="form-control" [value]="data.payment.tax_percent" disabled>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Next two fields parallel -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="dueAmount">Due Amount</label>
+        <input type="text" id="dueAmount" class="form-control" [value]="data.payment.due_amount | currency" disabled>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="totalDue">Total Due</label>
+        <input type="text" id="totalDue" class="form-control" [value]="data.payment.total_due | currency" disabled>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Last two fields parallel -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="payeeDueDate">Due Date</label>
+        <input type="text" id="payeeDueDate" class="form-control" [value]="data.payment.payee_due_date" disabled>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="paymentStatus">Payment Status</label>
+        <input type="text" id="paymentStatus" class="form-control" [value]="data.payment.payee_payment_status" disabled>
+      </div>
+    </div>
+  </div>
+</div>
