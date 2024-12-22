@@ -5,8 +5,9 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class PaymentService {
-  private baseUrl = 'http://0.0.0.0:8000/payments';
+  //private baseUrl = 'http://0.0.0.0:8000/payments';
 
+  private baseUrl = 'https://paymentdatahandler-backend.onrender.com/payments';
   constructor() {}
 
   // Fetch payments with filter, search, paging, and server-side calculations
