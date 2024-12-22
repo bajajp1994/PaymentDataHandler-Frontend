@@ -18,8 +18,8 @@ button {
 
 /* Add borders to the input field */
 .border-input {
-  border: 2px solid #ccc; /* You can change the color as needed */
-  border-radius: 4px; /* Optional: to make the corners rounded */
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
 
 /* Add borders to the table */

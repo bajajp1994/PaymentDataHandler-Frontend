@@ -134,7 +134,7 @@ export class AddPaymentComponent implements OnInit {
     const selectedCurrencyCode = event.value;
     const selectedCurrency = this.currencies.find(currency => currency.code === selectedCurrencyCode);
     if (selectedCurrency) {
-      console.log('Selected Currency:', selectedCurrency);  // You can use this to perform any additional actions
+      console.log('Selected Currency:', selectedCurrency);
     }
   }
 
