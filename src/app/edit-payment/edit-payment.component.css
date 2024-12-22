@@ -1,0 +1,43 @@
+/* Styling for editable and non-editable fields */
+.editable-fields, .readonly-fields {
+  margin-bottom: 20px;  /* Adds space between sections */
+}
+
+/* Each form field has a bottom margin to ensure space between them */
+.form-field {
+  margin-bottom: 15px;
+}
+
+/* Styling for the readonly message */
+.readonly-fields-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 15px; /* Adds spacing below the message */
+}
+
+.readonly-text {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Optional: Customize the form appearance for readonly fields */
+mat-form-field[disabled] {
+  background-color: #f5f5f5;
+}
+
+mat-form-field[disabled] input {
+  color: #a6a6a6;
+}
+
+button {
+  font-size: 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  background-color: black;
+  color: white;
+}

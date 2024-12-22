@@ -8,6 +8,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { PaymentDetailsDialogComponent } from './payment-details-dialog/payment-details-dialog.component';
 import { PaymentService } from '../services/payment.service';
 import {AddPaymentComponent} from '../add-payment/add-payment.component';
+import {EditPaymentComponent} from '../edit-payment/edit-payment.component';
+import {DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
 
 export interface FilterFields {
   payee_first_name: string;
@@ -34,12 +36,17 @@ export interface FilterFields {
     MatTable,
     CurrencyPipe,
     MatTableModule,
-    CommonModule
+    CommonModule,
+    MatNativeDateModule
+  ],
+  providers: [
+    { provide: DateAdapter, useClass: MatNativeDateModule }, // Providing native DateAdapter
+    { provide: MAT_DATE_LOCALE, useValue: 'en-US' },
   ],
   styleUrls: ['./main-screen.component.css']
 })
 export class MainScreenComponent implements OnInit {
-  payments: any[] = []; // Your payments array
+  payments: any[] = [];
   selectedFiles: { [key: string]: File } = {};
   payment: any = {
     payee_first_name: '',
@@ -77,16 +84,6 @@ export class MainScreenComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchPayments();
-  }
-
-  // Getter for full payee name
-  get payeeName(): string {
-    return `${this.payment.payee_first_name} ${this.payment.payee_last_name}`;
-  }
-
-  // Getter for full payee address
-  get payeeAddress(): string {
-    return `${this.payment.payee_address_line_1}, ${this.payment.payee_address_line_2}, ${this.payment.payee_city}, ${this.payment.payee_province_or_state}, ${this.payment.payee_postal_code}`;
   }
 
   goToPage(page: number): void {
@@ -216,6 +213,20 @@ export class MainScreenComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+  }
+
+  openUpdatePayment(payment: any): void {
+    const dialogRef = this.dialog.open(EditPaymentComponent, {
+      width: '80%',
+      data: payment,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('Payment updated:', result);
+        this.fetchPayments();
+      }
     });
   }
 }

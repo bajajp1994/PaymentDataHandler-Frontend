@@ -10,8 +10,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {CountryCurrencyService} from '../services/country-currency.service';
 import {HttpClientModule} from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { debounceTime, switchMap, map } from 'rxjs/operators';
 import {MatAutocomplete, MatAutocompleteTrigger} from '@angular/material/autocomplete';
 import {PaymentService} from '../services/payment.service';
 

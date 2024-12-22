@@ -2,16 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface Country {
-  name: string;
-  alpha2Code: string;
-}
-
-export interface Currency {
-  code: string;
-  name: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })
